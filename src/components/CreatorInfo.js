@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import CircularProgress from '@mui/material/CircularProgress'
 import { toast } from 'react-toastify'
 import ShowInfo from './ShowInfo'
 
@@ -141,7 +142,11 @@ const CreatorInfo = () => {
               />
             </div>
             {loading ? (
-              'Loading...'
+              <>
+                <div style={{ padding: '100px 0px', textAlign: 'center' }}>
+                  <CircularProgress aria-label='Loading...' />
+                </div>
+              </>
             ) : (
               <div>
                 {videoPreview && (
